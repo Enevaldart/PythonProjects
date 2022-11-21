@@ -1,0 +1,6 @@
+Flask==2.1.2
+PyPDF2~=2.11.1
+pyttsx3~=2.90
+pdfplumber~=0.7.5
+WTForms~=3.0.1
+Werkzeug~=2.2.2

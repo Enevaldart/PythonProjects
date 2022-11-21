@@ -8,13 +8,16 @@ import webbrowser
 import os
 import smtplib
 from PyMultiDictionary import MultiDictionary
+from PyPDF2 import PdfFileReader
 
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
+engine.setProperty('rate', 150)
 dictionary = MultiDictionary()
+#reader = PdfFileReader('C:\Users\hp\PycharmProjects\AlexaBot\resources\Son_of_Fate_by_kiriamiti_John.pdf')
 
 def talk(text):
     engine.say(text)
@@ -22,14 +25,14 @@ def talk(text):
 
 def take_command():
     with sr.Microphone() as source:
-        print('Listening...')
-        listener.pause_threshold = 1
-        voice = listener.listen(source)
+       print('Listening...')
+       # listener.pause_threshold = 1
+       # voice = listener.listen(source)
 
     try:
         print('Recognizing...')
-        command = listener.recognize_google(voice)
-       # command = input('Enter your command instead: \n')
+      #  command = listener.recognize_google(voice)
+        command = input('Enter your command instead: \n')
         print(command)
         if 'alexa' in command:
             command = command.replace('alexa', '')
@@ -91,9 +94,9 @@ if __name__ == "__main__":
          talk(pyjokes.get_jokes())
 
        elif 'meaning' in command:
-         dic = command.replace('whats the meaning of', '')
-         print(dictionary.meaning('en', dic))
-         talk(dictionary.synonym('en', dic))
+         dic = command.replace('what is the meaning of', '')
+         talk(dictionary.meaning('en', dic))
+         print(dictionary.synonym('en', dic))
 
        elif 'shut down' in command:
            os.system('shutdown -s')
@@ -112,11 +115,11 @@ if __name__ == "__main__":
        else:
          talk('I, Alexa, cannot understand what you are saying.\n')
 
-         #during the ddevelopment of the program sme modules took longer to install.
+         #during the development of the program sme modules took longer to install.
          # such mudules include the dictionary module and therefore instead of taking
          # more time on the same thing, I had to put it out for later approach.
 
-         #On 5th of November 2022, I had to work on the several issues. These included:
-         # 1. The pdf to audio
+         # On 5th of November 2022, I had to work on the several issues. These included:
+         # 1. The pdf to audio - DONE but the snippet isn't yet copied here
          # 2. My bot to play my local musics
          # 3. much more.
