@@ -1,7 +1,7 @@
 import PyPDF2
-from urllib import request
 import pyttsx3
 import pdfplumber
+from flask import send_file
 
 
 def convert(file):
@@ -21,8 +21,11 @@ def convert(file):
          voices = engine.getProperty('voices')
          engine.setProperty('voice', voices[1].id)
          engine.setProperty('rate', 170)
-
-         engine.save_to_file(finalText, file.replace('pdf', 'mp3'))
+         new_file = file.replace('pdf', 'mp3')
+         new_file = new_file.replace('uploads', 'downloads')
+         engine.save_to_file(finalText, new_file)
          engine.runAndWait()
+         path = 'downloads/Testing.mp3'
+         return send_file(path, as_attachment=True)
      except ValueError:
          return " Invalid input"
