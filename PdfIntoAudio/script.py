@@ -2,6 +2,7 @@ import PyPDF2
 import pyttsx3
 import pdfplumber
 from flask import send_file
+import os
 
 
 def convert(file):
@@ -25,7 +26,5 @@ def convert(file):
          new_file = new_file.replace('uploads', 'downloads')
          engine.save_to_file(finalText, new_file)
          engine.runAndWait()
-         path = 'downloads/Testing.mp3'
-         return send_file(path, as_attachment=True)
      except ValueError:
          return " Invalid input"

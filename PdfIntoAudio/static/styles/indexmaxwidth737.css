@@ -1,0 +1,95 @@
+.othernav{
+    background: rgba(255, 255, 255, .9);
+    color: rgba(29, 28, 27, 0.8);
+    display: flex;
+    flex-direction: column;
+    width: 98vw;
+    right: 0;
+    bottom: 20vh;
+   /* transform: translateY(200px);
+   /* top: 67px; */
+    position: absolute;
+    padding: 20px;
+    padding-top: 50px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition-delay: 1s;
+}
+
+.othernav .nav_others, .nav_others label{
+    font-size: 30px;
+    padding: 5px;
+    margin: 25px;
+}
+
+.othernav a{
+    margin: 0;
+}
+
+nav .nav_others label{
+    border: 1px solid black;
+}
+nav .nav_others#nav_other_col{
+    margin: 25px auto;
+}
+
+nav .nav_others .collapsible-text{
+    background-color: #fff;
+    margin: 0px auto;
+    font-size: 20px;
+    position: absolute;
+    left: -45px;
+    backdrop-filter: blur(0);
+}
+
+#menu_nav{
+    font-weight: 600;
+    position: absolute;
+    right: 35px;
+    font-size: 30px;
+    opacity: 1;
+}
+
+#menu_nav label{
+    border: none;
+}
+
+
+
+#convertor_logo{
+    left: 35px;
+}
+
+.input{
+    position: fixed;
+}
+.input #drop-menu{
+    position: ;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+nav .input input:checked ~ nav .input label #drop-menu{
+    display: block;
+ }
+
+nav{
+    z-index: 2;
+}
+
+nav .othernav.active{
+    top: 70px;
+    position: fixed;
+    background-color:  #ffffff;
+    z-index: 3;
+    backdrop-filter: blur(10px);
+}
+
+.mainsection .seconddiv .file-upload .box .drop-zone__prompt label.file_label{
+    z-index: 2;
+}
+
+

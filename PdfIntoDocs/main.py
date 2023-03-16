@@ -1,4 +1,6 @@
-import aspose.words as aw
+import pdf2docx
 
-doc = aw.Document("intro_healtheducation (1).pdf")
-doc.save('Output.docx')
+pdf_file = "maseno.pdf"
+docx_file = "maseno.docx"
+
+pdf2docx.parse(pdf_file, docx_file)

@@ -26,9 +26,6 @@ def talk(text):
 def take_command():
     with sr.Microphone() as source:
        print('Listening...')
-       # listener.pause_threshold = 1
-       # voice = listener.listen(source)
-
     try:
         print('Recognizing...')
       #  command = listener.recognize_google(voice)
@@ -37,12 +34,10 @@ def take_command():
         if 'alexa' in command:
             command = command.replace('alexa', '')
             print(command)
-
     except:
         print('Please say that again...')
         talk('Please say that again...')
         return 'None'
-        #pass
     return command
 
 

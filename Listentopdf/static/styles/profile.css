@@ -1,0 +1,247 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #161623;
+    min-height: 100vh;
+
+}
+
+section::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#f00, #f0f);
+    clip-path: circle(30% at right 70%);
+}
+
+section::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#2196f3, #e91e63);
+    clip-path: circle(20% at 10% 10%);
+}
+
+.container{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.container .card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: rgba(255, 255, 255, .05);
+    margin: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.container .card .content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: .5;
+    transition: .5s;
+}
+
+.container .card:hover .content{
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+.container .card .content .imgbx{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid rgba(0, 0, 0, .25);
+}
+
+.container .card .content .imgbx img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+.container .card .content .contentbx h3{
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 10px;
+    line-height: 1.1em;
+}
+
+.container .card .content .contentbx h3 span{
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: initial;
+}
+
+.container .card .sci{
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding-right: 30px;
+}
+
+.container .card .sci li{
+    list-style: none;
+    margin: 0 25px;
+    transform: translateY(60px);
+}
+
+.container .card .sci li{
+    color: #fff;
+    font-size: 24px;
+    transition: .5s;
+    opacity: 0;
+    transition-delay: calc(0.1s * var(--i));
+}
+
+.container .card:hover .sci li{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+/*nav*/
+
+#convertor_logo{
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    padding-right: 13px;
+    padding-right: 13px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+#convertor_logo:hover{
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+#convertor_logo:hover .material-symbols-outlined{
+    padding-right: 17px;
+    padding-left: 15px;
+    color: #f00;
+    
+}
+
+#convertor_logo .material-symbols-outlined{
+    font-size: 20px;
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+    color: #f0f;
+}
+
+.logonav{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  nav img{
+    width: 50px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    margin-right: 10px;
+    opacity: .5;
+  }
+
+  .logo2{
+    color: rgba(29, 28, 27, 0.3);
+  }
+  
+  .logo1{
+    color: rgba(29, 28, 27, 0.7);
+  }
+
+/*terms and service page*/
+
+
+.cards_term{
+    position: relative;
+    width: 80vw;
+    height: 75vh;
+    top: 30px;
+    background: rgba(255, 255, 255, .05);
+    margin: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    overflow: ;
+}
+
+.card-content{
+    scroll-behavior: smooth;
+    width: 70vw;
+    height: 60vh;
+    margin: 20px;
+    padding: 20px;
+    color: #fff;
+    opacity: .7;
+    font-size: 17px;
+    overflow-y: scroll;
+}
+
+.card-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.card-content {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert Pdf Into Audio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" media="screen and (max-width: 1259px)" href="{{ url_for('static',filename='styles/indexmaxwidth1260.css') }}" />
+    <link rel="shortcut icon" type="image/png" href="/static/favicon.png">
+    <link rel="stylesheet" media="screen and (max-width: 737px)" href="{{ url_for('static',filename='styles/indexmaxwidth737.css') }}" />
+    
+
+    </head>
+<body>
+<script async defer src="{{ url_for('static',filename='index.js') }}"> </script>
+
+<nav>
+    <span id="convertor_logo"><div class="logonav">
+        <img class="lognav" src="/static/logoversion5.png"></div>
+        <h3 class="logo1">ListenTo</h3>
+        <h3 class="logo2">PDF</h3>
+    </span>
+    <div class="othernav">
+        <span class="nav_others"><a href="#">Convert PDF</a></span>
+        <span class="nav_others" id="nav_other_col">
+            <input type="checkbox" name="collapsible-head" id="collapsible-head">
+            <label class="dropnav" for="collapsible-head">How to use <span id="expand-more" class="material-symbols-outlined">
+            expand_more
+            </span></label>
+            <div class="collapsible-text">
+                <p>Just click the upload file button or drag and drop to input file.<br>
+                You might be needed to enter the file by clicking the upload file button since the drag and drop might fail to work on your browser.
+                </p>  
+            </div>
+        </span>
+        <span class="nav_others"><a href="{{ url_for('behind_the_making') }}">Behind The Making</a></span>
+    </div>
+    <!---menu icon-->
+    <div class="input" id="menu_nav">
+       <input type="checkbox" name="drop-down-menu" id="drop-down-menu">
+     <label for="drop-down-menu" class='hamb'>
+        <span id="drop-menu" class="material-symbols-outlined drop-menu">
+           menu
+        </span>
+    </label>
+</div>
+    
+</nav>
+
+<hr>
+
+<div class="mainsection">
+
+<div class="classone">
+    <h2>
+        Convert PDF into Audio
+    </h2>
+    <h4>100% Automatic and free</h4>
+    <img class="paint1" src="/static/rmbg-yellow_paint.png">
+</div>
+
+
+<div class="seconddiv">
+<div class="file-upload drop-zone" id="drop-area" ondrop="">
+    <form id="form" class="box" action="convert_pdf" method='POST' enctype="multipart/form-data" name="dbForm">
+        <span class="drop-zone__prompt"><label for="file" class="file_label">Upload PDF</label>
+            <div id="dropContainer">
+                <h3 class="highlight">or drop a file,</h3>
+                <h4>paste an image or <u>URL</u></h4>
+            </div>
+        </span>
+        <!-----<div class="drop-zone__thumb" data-label="myfile.txt"></div>--->
+        <input class="file-upload_input drop-zone__input" type="file" id="file" name="file" onchange="document.getElementById('form').submit(); document.getElementById('myModal').classList.add('show');" multiple required />
+    </form>
+</div>
+
+<img class="paint2" src="/static/rmbg-paintbrush.png" alt="">
+
+<div class="term">
+    By uploading a PDF file or URL you agree to our <a href="{{ url_for('Terms_of_service') }}">Terms of Service</a>. This site is protected by hcaptcha and its <a href="{{ url_for('Terms_of_service') }}">Privacy Policy</a> and <a href="{{ url_for('Terms_of_service') }}">Terms of Service</a> apply.
+</div>
+
+</div>
+</div>
+
+<div class="bmodal">
+<button type="button" id="open" data-bs-toggle="modal" data-bs-target="#myModal">
+    Open modal
+</button>
+</div>
+
+<!-- The Modal -->
+<div class="myModal" id="myModal" class="show">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h1 class="modal-title">ListenToPDF</h1>
+      <!----    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      --></div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <h2>Your File Is Processing ...</h2>
+          <p>We hope you loved our services. We would be so happy if you would have thanked us by sharing about our services to your friends and relatives.</p>
+            <p>It produces an audio with females voice of 150 words per minute.</p>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" id="close" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+  </div>
+
+
+
+<footer>
+    We hope our services are satisfying. Please support our work by buying us a cup of coffee at&nbsp;<a href="https://www.buymeacoffee.com/ListenToPdf">buymeacoffee</a>.
+</footer>
+</body>
+</html>
